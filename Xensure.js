@@ -7,7 +7,7 @@ function ensure(value) {
     Number.isNaN(value) ||
     value === 0
   ) {
-    throw 'error';
+    throw new Error('No arguments');
   } else {
     return value;
   }

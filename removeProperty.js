@@ -1,18 +1,19 @@
-const mimmo = {
+const general = {
   io: 'pietro',
-  mommo: 'zizzi',
+  id: 12,
 };
 
 // delete mimmo.io;
 // console.log(mimmo);
 
 function removeProperty(obj, prop) {
-  if (prop in obj) {
-    delete obj.prop;
-    console.log(obj);
-    true;
-  } else {
-    false;
+  for (prop in obj) {
+    if (obj.hasOwnProperty(prop)) {
+      delete obj.prop;
+      return true;
+    } else {
+      false;
+    }
   }
 }
 
@@ -20,5 +21,5 @@ function removeProperty(obj, prop) {
 //   return object ? hasOwnProperty.call(object, key) : false;
 // }
 
-removeProperty(mimmo, 'io');
-console.log(mimmo);
+removeProperty(general, 'io');
+console.log(general);

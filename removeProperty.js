@@ -1,24 +1,33 @@
-const mimmo = {
+const general = {
   io: 'pietro',
-  mommo: 'zizzi',
+  id: 12,
 };
 
-// delete mimmo.io;
-// console.log(mimmo);
+// // delete mimmo.io;
+// // console.log(mimmo);
+
+// function removeProperty(obj, prop) {
+//   for (prop in obj) {
+//     if (obj.hasOwnProperty(prop)) {
+//       delete obj.prop;
+//       return true;
+//     } else {
+//       false;
+//     }
+//   }
+// }
 
 function removeProperty(obj, prop) {
-  if (prop in obj) {
-    delete obj.prop;
-    console.log(obj);
-    true;
-  } else {
-    false;
+  if (obj[prop] !== undefined) {
+    delete obj[prop];
+    return true;
   }
+  return false;
 }
 
 // function has(object, key) {
 //   return object ? hasOwnProperty.call(object, key) : false;
 // }
 
-removeProperty(mimmo, 'io');
-console.log(mimmo);
+removeProperty(general, 'id');
+console.log(general);
